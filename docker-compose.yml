@@ -1,0 +1,29 @@
+version: "3.7"
+
+services:
+
+  backend:
+    extends:
+      file: docker-backend.yml
+      service: backend
+    container_name: api_backend_1
+    expose:
+      - "9000:9000"
+
+  backend-2:
+    extends:
+      file: docker-backend.yml
+      service: backend
+    container_name: api_backend_2
+    expose:
+      - "9001:9000"
+
+  proxy:
+    image: proxy_server
+    build:
+      context: proxy
+      dockerfile: Dockerfile
+    container_name: proxy_server
+    tty: true
+    ports:
+      - "80:80"
