@@ -1,7 +1,9 @@
+https://github.com/saengate/proxy_configs
+
 For test: Install Locust
-`pip install locust'  
+`pip install locust`  
 Run
-`locust´
+`locust`
 
 Go to: `http://localhost:8089/`
 
